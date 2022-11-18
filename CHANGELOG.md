@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.14.0](https://github.com/googleapis/google-auth-library-java/compare/v1.13.0...v1.14.0) (2022-11-18)
+
+
+### Features
+
+* Next release from main branch is 1.13.0 ([#1077](https://github.com/googleapis/google-auth-library-java/issues/1077)) ([d56eee0](https://github.com/googleapis/google-auth-library-java/commit/d56eee07911ba65a685ccba585e71061037ea756))
+
+
+### Bug Fixes
+
+* AwsCredentials should not call metadata server if security creds and region are retrievable through environment vars ([#1100](https://github.com/googleapis/google-auth-library-java/issues/1100)) ([1ff5772](https://github.com/googleapis/google-auth-library-java/commit/1ff57720609fdf27f28b9c543c1ef63b57892593))
+
 ## [1.13.0](https://github.com/googleapis/google-auth-library-java/compare/v1.12.1...v1.13.0) (2022-11-15)
 
 
