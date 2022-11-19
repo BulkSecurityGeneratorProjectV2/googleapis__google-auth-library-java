@@ -50,6 +50,7 @@ import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.time.Instant;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -362,7 +363,7 @@ public class PluggableAuthHandlerTest {
     environmentProvider.setEnv("GOOGLE_EXTERNAL_ACCOUNT_ALLOW_EXECUTABLES", "1");
 
     // Build output_file.
-    File file = File.createTempFile("output_file", /* suffix= */ null, /* directory= */ null);
+    File file = Files.createTempFile("output_file", null).toFile();
     file.deleteOnExit();
 
     // Options with output file specified.
@@ -437,7 +438,7 @@ public class PluggableAuthHandlerTest {
     environmentProvider.setEnv("GOOGLE_EXTERNAL_ACCOUNT_ALLOW_EXECUTABLES", "1");
 
     // Build output_file.
-    File file = File.createTempFile("output_file", /* suffix= */ null, /* directory= */ null);
+    File file = Files.createTempFile("output_file", null).toFile();
     file.deleteOnExit();
 
     OAuth2Utils.writeInputStreamToFile(
@@ -493,7 +494,7 @@ public class PluggableAuthHandlerTest {
     environmentProvider.setEnv("GOOGLE_EXTERNAL_ACCOUNT_ALLOW_EXECUTABLES", "1");
 
     // Build output_file.
-    File file = File.createTempFile("output_file", /* suffix= */ null, /* directory= */ null);
+    File file = Files.createTempFile("output_file", null).toFile();
     file.deleteOnExit();
 
     OAuth2Utils.writeInputStreamToFile(
@@ -547,7 +548,7 @@ public class PluggableAuthHandlerTest {
     environmentProvider.setEnv("GOOGLE_EXTERNAL_ACCOUNT_ALLOW_EXECUTABLES", "1");
 
     // Build output_file.
-    File file = File.createTempFile("output_file", /* suffix= */ null, /* directory= */ null);
+    File file = Files.createTempFile("output_file", null).toFile();
     file.deleteOnExit();
 
     // Create an expired response.

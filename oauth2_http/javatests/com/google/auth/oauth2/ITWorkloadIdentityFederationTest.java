@@ -51,6 +51,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.time.Instant;
 import java.util.HashMap;
 import java.util.Map;
@@ -197,8 +198,7 @@ public final class ITWorkloadIdentityFederationTest {
     String idToken = generateGoogleIdToken(OIDC_AUDIENCE);
 
     File file =
-        File.createTempFile(
-            "ITWorkloadIdentityFederation", /* suffix= */ null, /* directory= */ null);
+        Files.createTempFile("ITWorkloadIdentityFederation", null).toFile();
     file.deleteOnExit();
     OAuth2Utils.writeInputStreamToFile(
         new ByteArrayInputStream(idToken.getBytes(StandardCharsets.UTF_8)), file.getAbsolutePath());
@@ -241,8 +241,7 @@ public final class ITWorkloadIdentityFederationTest {
             + "\"\n";
 
     File file =
-        File.createTempFile(
-            "ITWorkloadIdentityFederation", /* suffix= */ null, /* directory= */ null);
+        Files.createTempFile("ITWorkloadIdentityFederation", null).toFile();
     file.deleteOnExit();
     if (!file.setExecutable(true, true)) {
       throw new IOException("Unable to make script executable");

@@ -55,6 +55,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
+import java.nio.file.Files;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -600,7 +601,7 @@ public class UserCredentialsTest extends BaseSerializationTest {
             .setClientSecret(CLIENT_SECRET)
             .setRefreshToken(REFRESH_TOKEN)
             .build();
-    File file = File.createTempFile("GOOGLE_APPLICATION_CREDENTIALS", null, null);
+    File file = Files.createTempFile("GOOGLE_APPLICATION_CREDENTIALS", null).toFile();
     file.deleteOnExit();
 
     String filePath = file.getAbsolutePath();
@@ -616,7 +617,7 @@ public class UserCredentialsTest extends BaseSerializationTest {
             .setRefreshToken(REFRESH_TOKEN)
             .build();
 
-    File file = File.createTempFile("GOOGLE_APPLICATION_CREDENTIALS", null, null);
+    File file = Files.createTempFile("GOOGLE_APPLICATION_CREDENTIALS", null).toFile();
     file.deleteOnExit();
 
     String filePath = file.getAbsolutePath();

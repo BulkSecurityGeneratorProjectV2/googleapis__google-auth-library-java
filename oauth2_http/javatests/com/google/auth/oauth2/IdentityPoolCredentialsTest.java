@@ -48,6 +48,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -128,7 +129,7 @@ public class IdentityPoolCredentialsTest {
   @Test
   public void retrieveSubjectToken_fileSourced() throws IOException {
     File file =
-        File.createTempFile("RETRIEVE_SUBJECT_TOKEN", /* suffix= */ null, /* directory= */ null);
+        Files.createTempFile("RETRIEVE_SUBJECT_TOKEN", null).toFile();
     file.deleteOnExit();
 
     String credential = "credential";
@@ -155,7 +156,7 @@ public class IdentityPoolCredentialsTest {
   @Test
   public void retrieveSubjectToken_fileSourcedWithJsonFormat() throws IOException {
     File file =
-        File.createTempFile("RETRIEVE_SUBJECT_TOKEN", /* suffix= */ null, /* directory= */ null);
+        Files.createTempFile("RETRIEVE_SUBJECT_TOKEN", null).toFile();
     file.deleteOnExit();
 
     MockExternalAccountCredentialsTransportFactory transportFactory =
@@ -197,7 +198,7 @@ public class IdentityPoolCredentialsTest {
   @Test
   public void retrieveSubjectToken_fileSourcedWithNullFormat_throws() throws IOException {
     File file =
-        File.createTempFile("RETRIEVE_SUBJECT_TOKEN", /* suffix= */ null, /* directory= */ null);
+        Files.createTempFile("RETRIEVE_SUBJECT_TOKEN", null).toFile();
     file.deleteOnExit();
 
     Map<String, Object> credentialSourceMap = new HashMap<>();
